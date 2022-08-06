@@ -10,12 +10,12 @@ Kasa est une application C2C pour la location d'appartements. Projet 11 du parco
 
 2 - Download this project and open the folder
 
-3 - Install the dependencies with yarn install
+3 - Install the dependencies with `yarn install`
 
 3 - Runs the app in the development mode via `yarn start`
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-4 - Run the tests with yarn test. Results can be viewed on the /coverage/lcov-report/ page.
+4 - Run the tests with `yarn test`. Results can be viewed on the /coverage/lcov-report/ page.
 
 5 - To obtain a production version do yarn build :  `yarn run build`
 
