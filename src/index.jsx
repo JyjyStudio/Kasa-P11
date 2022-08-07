@@ -9,19 +9,21 @@ import About from './pages/About'
 import NotFound from './pages/NotFound'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
+import { ViewportProvider } from './utils/Context/ViewportContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
 	<BrowserRouter>
-		<Header />
-		<Routes>
-			<Route path="/" element={<Home />} />
-			<Route path="/logement:id" element={<Logement />} />
-			<Route path="/about" element={<About />} />
-			<Route path="*" element={<NotFound />} />
-		</Routes>
-		<Footer/>
+		<ViewportProvider>
+			<Header />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/logement:id" element={<Logement />} />
+				<Route path="/about" element={<About />} />
+				<Route path="*" element={<NotFound />} />
+			</Routes>
+			<Footer />
+		</ViewportProvider>
 	</BrowserRouter>
 )
-
