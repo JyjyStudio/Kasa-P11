@@ -20,7 +20,10 @@ const HeaderContainer = styled.header`
 	padding: 1rem;
 	height: 6rem;
 	gap: 3rem;
+	margin: 10px auto 2%;
+    width: 95%;
 	@media (max-width: 768px) {
 		height: 5rem;
+		width: 100%;
 	}
 `
