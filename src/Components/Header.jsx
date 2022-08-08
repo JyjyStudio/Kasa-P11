@@ -10,19 +10,19 @@ export default function Header() {
 	const { viewportWidth } = useViewport()
 
 	const ImgStyle = {
-		height: viewportWidth < 700 ? "2.2rem" : "4rem",
+		height: viewportWidth <= 700 ? "2.2rem" : "4rem",
 	}
 	
 	const HeaderContainerStyle = {
-		height: viewportWidth < 768 && "5rem",
-		gap: viewportWidth < 550 && "2rem",
-		alignItems: viewportWidth < 550 && "center",
-		padding: viewportWidth < 550 && "0",
-		flexDirection: viewportWidth < 390 && "column",
+		height: viewportWidth <= 768 && "5rem",
+		gap: viewportWidth <= 550 && "2rem",
+		alignItems: viewportWidth <= 550 && "center",
+		padding: viewportWidth <= 550 && "0",
+		flexDirection: viewportWidth <= 390 && "column",
 	}
 
 	const StyledLinkStyle = {
-		margin: viewportWidth <= 390 ? "0 auto" : "0 auto 0 0",
+		margin: viewportWidth >= 390 && "0 auto 0 0",
 	}
 
 	return (
