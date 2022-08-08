@@ -3,7 +3,7 @@ import whiteLogo from '../assets/logo-white.svg'
 import Img from '../Components/Img'
 import StyledLink from '../Components/StyledLink'
 
-export default function Footer(props) {
+export default function Footer() {
 	
 	const year = new Date().getFullYear()
 
@@ -19,6 +19,7 @@ export default function Footer(props) {
 
 const FooterContainer = styled.footer`
 	background-color: black;
+	text-align: center;
 	color: white;
 	display: flex;
 	flex-direction: column;

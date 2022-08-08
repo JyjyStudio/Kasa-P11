@@ -6,9 +6,7 @@ const Img = styled.img`
 	margin: ${props => props.margin};
 	border-radius: ${props => props.borderRadius};
 	display: ${({display}) => display};
-	@media (max-width: 768px) {
-		width: ${props => props.$mobileWidth};
-		height: ${props => props.$mobileHeight};
-	}
-`
+	filter: ${({filter}) => filter};
+	object-fit: ${({cover}) => cover ? "cover" : ""};
+	`
 export default Img
