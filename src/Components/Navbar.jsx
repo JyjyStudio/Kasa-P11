@@ -3,10 +3,24 @@ import styled from 'styled-components'
 import StyledLink from './StyledLink'
 
 export default function Navbar() {
+
+	const navbarItems = [
+		{ label: 'Accueil', path: '/' },
+		{ label: 'A Propos', path: '/about' },
+	]
+
 	return (
 		<Nav>
-			<StyledLink color={colors.primaryPink} to="/" tabIndex="0">Accueil</StyledLink>
-			<StyledLink color={colors.primaryPink} to="/about" tabIndex="0">A Propos</StyledLink>
+			{navbarItems.map((item, id) => (
+				<StyledLink
+					color={colors.primaryPink}
+					to={item.path}
+					tabIndex="0"
+					key={`${id}-${item.label}`}
+				>
+					{item.label}
+				</StyledLink>
+			))}
 		</Nav>
 	)
 }
@@ -14,7 +28,9 @@ export default function Navbar() {
 const Nav = styled.nav`
 	display: flex;
 	align-items: center;
-	font-size: 1.3rem;
 	font-weight: 500;
 	gap: 2rem;
+	@media (max-width: 1024px) {
+		font-size: calc(15px + 1vw);
+	}
 `
