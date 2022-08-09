@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import useViewport from '../utils/Hooks/useViewport'
 import Img from './Img'
 
-export default function Hero({ txt, img }) {
+export default function Banner({ txt, img }) {
 
 	const { viewportWidth } = useViewport()
 
-	const HeroImgStyle = {
+	const bannerImgStyle = {
 		height: viewportWidth < 769 && '14rem',
 		borderRadius: '25px',
 		width: '100%',
@@ -16,17 +16,17 @@ export default function Hero({ txt, img }) {
 
 	return (
 		<ImgContainer>
-			<Img src={img} style={HeroImgStyle} alt="hero" cover/>
+			<Img src={img} style={bannerImgStyle} alt="Banner" cover/>
 			<ImgLabel>{txt}</ImgLabel>
 		</ImgContainer>
 	)
 }
 
-const ImgContainer = styled.div`
+const ImgContainer = styled.section`
 	position: relative;
 `
 
-const ImgLabel = styled.div`
+const ImgLabel = styled.h1`
 	color: white;
 	font-size: 2.3rem;
 	position: absolute;
@@ -42,7 +42,7 @@ const ImgLabel = styled.div`
 	}
 `
 
-Hero.propTypes = {
+Banner.propTypes = {
 	txt: PropTypes.string,
 	img: PropTypes.string.isRequired,
 }
