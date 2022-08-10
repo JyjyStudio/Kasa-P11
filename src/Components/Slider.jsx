@@ -3,25 +3,38 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import SliderArrow from './SliderArrow'
 import Img from './Img'
+import '../utils/style/slider.css'
 
-export default function Slider( {data} ) {
-	
+export default function Slider({ data }) {
+	const [newIndex, setnewIndex] = useState(0)
 
-	const [index, setIndex] = useState(0)
+	const prevImg = () =>
+		newIndex > 0 ? setnewIndex(newIndex - 1) : setnewIndex(data.length - 1)
 
-	const prevImg = () => index > 0 ? setIndex(index - 1) : setIndex(data.length - 1)
-		
-	const nextImg = () => (index >= data.length - 1) ? setIndex(0) : setIndex(index + 1)
+	const nextImg = () =>
+		newIndex >= data.length - 1 ? setnewIndex(0) : setnewIndex(newIndex + 1)
 
 	return (
-	<SliderContainer>
-		<SlideContainer>
-			<Img src={data[index]} height="22rem" width="100%" cover alt={`banner-${index+1}`} />
+		<SliderContainer>
+			{data.map((pictureSrc, curentIndex) => (
+				<SlideContainer 
+					className={curentIndex === newIndex ? "slide active" : "slide"}
+					key={`banner-${curentIndex + 1}`}
+				>
+					{curentIndex === newIndex &&
+					<Img
+						src={pictureSrc}
+						alt={`picture-${curentIndex + 1}`}
+						height="22rem"
+						width="100%"
+						cover
+					/>}
+				</SlideContainer>
+			))}
 			<SliderArrow direction="prev" moveSlideFunc={prevImg} />
 			<SliderArrow direction="next" moveSlideFunc={nextImg} />
-		</SlideContainer>
-	</SliderContainer>
-  )
+		</SliderContainer>
+	)
 }
 
 const SlideContainer = styled.div`
@@ -31,9 +44,9 @@ const SlideContainer = styled.div`
 const SliderContainer = styled.section`
 	position: relative;
 	border-radius: 25px;
-    overflow: hidden;
+	overflow: hidden;
 	width: 100%;
-    height: 22rem;
+	height: 22rem;
 `
 Slider.propTypes = {
 	data: PropTypes.array.isRequired,
