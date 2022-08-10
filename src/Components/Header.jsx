@@ -19,10 +19,11 @@ export default function Header() {
 		alignItems: viewportWidth <= 550 && "center",
 		padding: viewportWidth <= 550 && "0",
 		flexDirection: viewportWidth <= 390 && "column",
+		marginBottom: viewportWidth <= 390 && "2rem"
 	}
 
 	const StyledLinkStyle = {
-		margin: viewportWidth >= 390 && "0 auto 0 0",
+		margin: viewportWidth > 390 && "0 auto 0 0",
 	}
 
 	return (
@@ -41,12 +42,11 @@ const HeaderContainer = styled.header`
 	padding: 1rem;
 	height: 6rem;
 	gap: 3rem;
-	margin: 10px auto 2%;
-    width: 90%;
+    margin: 0.5rem auto;
+	width: 85%;
 	max-width: 1300px;
 	
 	@media (max-width: 390px) {
-		flex-direction: column;
 		height: auto;
 	}
 `

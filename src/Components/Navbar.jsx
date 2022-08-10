@@ -15,7 +15,6 @@ export default function Navbar() {
 				<StyledLink
 					color={colors.primaryPink}
 					to={item.path}
-					tabIndex="0"
 					key={`${id}-${item.label}`}
 				>
 					{item.label}
@@ -32,5 +31,8 @@ const Nav = styled.nav`
 	gap: 2rem;
 	@media (max-width: 1024px) {
 		font-size: calc(15px + 1vw);
+	}
+	@media (max-width: 390px) {
+		font-size: calc(15px + 2vw);
 	}
 `

@@ -1,11 +1,11 @@
 import { Container } from '../Components/Container'
-import Hero from '../Components/Hero'
-import AboutHero from '../assets/about-hero.jpg'
+import Banner from '../Components/Banner'
+import AboutBanner from '../assets/about-banner.jpg'
 
 export default function About() {
 	return (
 		<Container>
-			<Hero img={AboutHero} /> 
+			<Banner src={AboutBanner} height="10rem" gradient/> 
 			<h1>About</h1>
 		</Container>
 	)

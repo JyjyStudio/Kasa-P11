@@ -6,7 +6,7 @@
 
 
 body {
-	font-family: 'Montserrat';
+	font-family: 'Montserrat', sans-serif;
 	font-size: calc(15px + 0.390625vw);
 	margin: 0 auto;
 }
