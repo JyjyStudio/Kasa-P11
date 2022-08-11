@@ -14,7 +14,7 @@ import { ViewportProvider } from './utils/Context/ViewportContext'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
-	<BrowserRouter>
+	<BrowserRouter basename='/Kasa-P11'>
 		<ViewportProvider>
 			<Header />
 			<Routes>
