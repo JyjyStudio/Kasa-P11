@@ -2,16 +2,16 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Img from './Img'
 
-export default function Card({ title, background }) {
+export default function Card({ title, pictureSrc }) {
 	return (
 		<CardContainer>
 			<GradientOverlay>
 				<Img
-					src={background}
+					src={pictureSrc}
 					alt="house"
 					cover
 					width="100%"
-					height="-webkit-fill-available"
+					height="16rem"
 				/>
 			</GradientOverlay>
 			<StyledH2>{title}</StyledH2>
@@ -25,15 +25,17 @@ const CardContainer = styled.article`
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
-	&:hover {
-		box-shadow: 0px 0px 10px darkgrey;	
-	}
 	@media (max-width: 860px) {
 		width: 100%;
 		height: 100%;
 	}
 `
 const GradientOverlay = styled.div`
+	transform: scale(1);
+	transition: all .5s ease;
+	&:hover {
+		transform: scale(1.05);
+	}
 	&::after {
 		content: '';
 		width: 100%;
@@ -54,6 +56,6 @@ const StyledH2 = styled.h2`
 `
 
 Card.propTypes = {
-	title: PropTypes.string,
-	background: PropTypes.string,
+	title: PropTypes.string.isRequired,
+	pictureSrc: PropTypes.string.isRequired,
 }
