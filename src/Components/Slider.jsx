@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import SliderArrow from './SliderArrow'
 import Img from './Img'
-import '../utils/style/slider.css'
+import '../utils/style/animations.css'
 
 export default function Slider({ data }) {
 	const [newIndex, setnewIndex] = useState(0)

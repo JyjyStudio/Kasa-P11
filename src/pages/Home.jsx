@@ -5,6 +5,7 @@ import styled from "styled-components"
 import Card from "../Components/Card"
 import data from '../data/logements.json'
 import StyledLink from "../Components/StyledLink"
+import colors from "../utils/colors"
 
 export default function Home() {
 	return (
@@ -13,7 +14,7 @@ export default function Home() {
 			<HousingsContainer>
 				{data.map(house => 
 					<StyledLink to={`/logement-${house.id}`} key={`/logement-${house.id}`} state={house} >
-						<Card title={house.title} key={house.id} background={house.cover} />
+						<Card title={house.title} key={house.id} pictureSrc={house.cover} />
 					</StyledLink>
 				)}
 			</HousingsContainer>
@@ -23,7 +24,7 @@ export default function Home() {
 }
 
 const HousingsContainer = styled.section`
-	background-color: #F6F6F6;
+	background-color: ${colors.grayBackground};
 	border-radius: 25px;
 	margin-top: 1.5rem;
 	padding: 2rem;

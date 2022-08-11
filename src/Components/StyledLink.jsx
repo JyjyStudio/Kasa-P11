@@ -9,8 +9,5 @@ const StyledLink = styled(Link)`
 	&:hover {
 		text-decoration: underline;
 	}
-	@media (max-width: 768px) {
-		font-size: ${({$mobileFontSize}) => $mobileFontSize};
-	}
 `
 export default StyledLink

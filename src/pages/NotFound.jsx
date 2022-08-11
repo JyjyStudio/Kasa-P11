@@ -7,7 +7,7 @@ export default function NotFound() {
 		<OopsContainer>
 			<Oops fontSize="12rem" fontWeight="700" mobileFontSize="8rem">404</Oops>
 			<Oops fontSize="2rem" fontWeight="500" mobileFontSize="1.5rem">Oups! La page que vous demandez n'existe pas.</Oops>
-			<StyledLink $underlined margin="7rem 0" color={colors.primaryPink} $mobileFontSize="1.1rem" to="/">Retourner sur la page d’accueil</StyledLink>
+			<StyledLink $underlined margin="7rem 0" color={colors.primaryPink} to="/">Retourner sur la page d’accueil</StyledLink>
 		</OopsContainer>
 	)
 }

@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Arrow from './Arrows'
 import Img from './Img'
 
-export default function Banner({ txt, src, height, gradient, arrows }) {
+export default function Banner({ txt, src, height, gradient }) {
 
 	const bannerImgStyle = {
 		height,
@@ -22,7 +21,6 @@ export default function Banner({ txt, src, height, gradient, arrows }) {
 			<Img src={src} style={bannerImgStyle} alt="Banner" cover/>
 			}
 			<ImgLabel>{txt}</ImgLabel>
-			{arrows && <Arrow/>}
 		</ImgContainer>
 		
 		
@@ -43,7 +41,6 @@ const ImgContainer = styled.section`
 	position: relative;
 	border-radius: 25px;
     overflow: hidden;
-
 `
 
 const ImgLabel = styled.h1`
