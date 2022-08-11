@@ -9,7 +9,9 @@ const Img = styled.img`
 	display: ${({ display }) => display};
 	filter: ${({ filter }) => filter};
 	cursor: ${({ cursor }) => cursor};
+	transition: ${({ transition }) => transition};
 	object-fit: ${({ cover }) => (cover ? 'cover' : '')};
+	display: block;
 `
 export default Img
 

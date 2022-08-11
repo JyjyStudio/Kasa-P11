@@ -18,8 +18,8 @@ export default function Header() {
 		gap: viewportWidth <= 550 && "2rem",
 		alignItems: viewportWidth <= 550 && "center",
 		padding: viewportWidth <= 550 && "0",
-		flexDirection: viewportWidth <= 390 && "column",
-		marginBottom: viewportWidth <= 390 && "2rem"
+		flexDirection: viewportWidth < 390 && "column",
+		marginBottom: viewportWidth < 390 && "2rem"
 	}
 
 	const StyledLinkStyle = {
@@ -45,8 +45,4 @@ const HeaderContainer = styled.header`
     margin: 0.5rem auto;
 	width: 85%;
 	max-width: 1300px;
-	
-	@media (max-width: 390px) {
-		height: auto;
-	}
 `

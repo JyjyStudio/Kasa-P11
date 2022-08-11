@@ -32,7 +32,7 @@ const Nav = styled.nav`
 	@media (max-width: 1024px) {
 		font-size: calc(15px + 1vw);
 	}
-	@media (max-width: 390px) {
+	@media (max-width: 389px) {
 		font-size: calc(15px + 2vw);
 	}
 `
