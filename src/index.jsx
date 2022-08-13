@@ -14,12 +14,12 @@ import { ViewportProvider } from './utils/Context/ViewportContext'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
-	<BrowserRouter basename='/Kasa-P11'>
+	<BrowserRouter basename={process.env.PUBLIC_URL}>
 		<ViewportProvider>
 			<Header />
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/logement:id" element={<Logement />} />
+				<Route path="/logements/:id" element={<Logement />} />
 				<Route path="/about" element={<About />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
