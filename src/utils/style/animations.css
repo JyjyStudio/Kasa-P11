@@ -27,7 +27,7 @@
 	overflow: hidden;
 }
 .openned-dropdown-content {
-	max-height: 9rem;
+	max-height: 100%;
 	transition: all .5s ease;
 }
 .closed-dropdown-content {
