@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import colors from '../utils/colors'
@@ -8,14 +8,21 @@ import DropdownIcon from '../assets/dropdown-arrow.svg'
 export default function Dropdown({ width, txt, content, center }) {
 	
 	const [isOpen, setIsOpen] = useState(false)
+	const [heightEl, setHeightEl] = useState(0)
 
-	const icon = useRef(null)
+	const iconRef = useRef(null)
+	const heightRef = useRef(null)
+
+	// On récupere la hauteur du contenu du dropdown lors du chargement (pour l'animation il faut la hauteur)
+	useEffect(() => {
+		setHeightEl(`${heightRef.current.scrollHeight}px`)
+	}, [])
 
 	const toggleDropdown = () => {
 		// si isOpen est true on le met a false et inversement
 		setIsOpen(!isOpen)
 		// et on ajoute une classe a l'élément pour gerer l'animation d'ouverture/fermeture du dropdown
-		icon.current.setAttribute(
+		iconRef.current.setAttribute(
 			'class',
 			`${isOpen ? 'close-dropdown-icon' : 'open-dropdown-icon'}`
 		)
@@ -29,12 +36,15 @@ export default function Dropdown({ width, txt, content, center }) {
 			>
 				<BtnLabel>{txt}</BtnLabel>
 				<Img
-					ref={icon}
+					ref={iconRef}
 					src={isOpen ? DropdownIcon : DropdownIcon}
 					alt={isOpen ? 'Open Dropdown Icon' : 'Close Dropdown Icon'}
 				/>
 			</DropdownBtn>
-			<div className={isOpen
+			<div
+			ref={heightRef}
+			style={{height: isOpen ? heightEl : '0'}}
+			className={isOpen
 				? 'openned-dropdown-content'
 				: 'closed-dropdown-content'
 			}>
