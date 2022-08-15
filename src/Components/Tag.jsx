@@ -12,8 +12,7 @@ const StyledTag = styled.div`
     padding: 0.3rem 1rem;
 	margin-right: .75rem;
 	margin-top: 1.2rem;
-	border-radius: 1rem;
+	border-radius: .5rem;
 	display: inline-block;
 	color: white;
-	font-size: .9rem;
 `
