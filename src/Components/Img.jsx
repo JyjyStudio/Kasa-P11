@@ -12,6 +12,7 @@ const Img = styled.img`
 	transition: ${({ transition }) => transition};
 	object-fit: ${({ cover }) => (cover ? 'cover' : '')};
 	display: block;
+	overflow: ${({ overflow }) => overflow};
 `
 export default Img
 
