@@ -27,6 +27,7 @@ export default function Slider({ data }) {
 						alt={`picture-${curentIndex + 1}`}
 						height="22rem"
 						width="100%"
+						borderRadius="25px"
 						cover
 					/>}
 				</SlideContainer>
@@ -37,16 +38,17 @@ export default function Slider({ data }) {
 	)
 }
 
-const SlideContainer = styled.div`
-	position: absolute;
-	width: 100%;
-`
 const SliderContainer = styled.section`
 	position: relative;
 	border-radius: 25px;
 	overflow: hidden;
 	width: 100%;
 	height: 22rem;
+`
+const SlideContainer = styled.div`
+	position: absolute;
+	width: 100%;
+	overflow-hidden;
 `
 Slider.propTypes = {
 	data: PropTypes.array.isRequired,
