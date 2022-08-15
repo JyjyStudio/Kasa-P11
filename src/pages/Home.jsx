@@ -13,7 +13,7 @@ export default function Home() {
 			<Banner txt="Chez vous, partout&nbsp;et&nbsp;ailleurs" src={HomeBanner} height="10rem" gradient/>
 			<HousingsContainer>
 				{data.map(house => 
-					<StyledLink to={`/logement-${house.id}`} key={`/logement-${house.id}`} state={house} >
+					<StyledLink to={`/logements/${house.id}`} key={`/logement-${house.id}`} state={house} >
 						<Card title={house.title} key={house.id} pictureSrc={house.cover} />
 					</StyledLink>
 				)}
